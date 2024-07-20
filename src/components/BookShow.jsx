@@ -14,14 +14,15 @@ function BookShow({ book, onDelete, onEdit }) {
         // toggle true false for showing the component
     }
 
-    const handleSubmit = (event) => {
+    const handleSubmit = (id, newTitle ) => {
         setShowEdit(false)
+        onEdit(id, newTitle)
     }
 
     let content = ''
     if (showEdit) {
         // if not showing the edit the edit will show when click
-        content = <BookEdit book={book} onEdit={onEdit} toggleForm={handleSubmit} />
+        content = <BookEdit book={book} onSubmit={handleSubmit} />
     }
 
     return (

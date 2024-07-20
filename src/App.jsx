@@ -10,6 +10,7 @@ function App() {
 	react won't update to the app component if they compare the original state 
 	and the update state have the same reference, so react won't re-render
 	*/
+	// edit
 	const editBookById = (id, newTitle) => {
 		const updatedBooks = books.map((book) => {
 			if (book.id === id) {
@@ -19,7 +20,7 @@ function App() {
 		})
 		setBooks(updatedBooks)
 	}
-	
+	// create
 	const createBook = (title) => {
 		const updateBooks = [
 			...books,
@@ -31,7 +32,7 @@ function App() {
 		setBooks(updateBooks);
 		console.log(updateBooks);
 	};
-	
+	// delete
 	const deleteBookById = (id) => {
 		const updateBooks = books.filter(book => {
 			return book.id !== id

@@ -2,7 +2,7 @@ import React from "react";
 import "../index.css";
 import { useState } from "react";
 
-function BookEdit({book, onEdit, toggleForm}) {
+function BookEdit({book, onSubmit}) {
     const [title, setTitle] = useState(book.title);
 
     const handleChange = (event) => {
@@ -12,11 +12,9 @@ function BookEdit({book, onEdit, toggleForm}) {
     const handleSubmit = (event) => {
         event.preventDefault();
         /*
-        onEdit has two param (id, newTitle)
+         has two param (id, newTitle)
         */
-        onEdit(book.id, title)
-        toggleForm(true)
-        setTitle("");
+       onSubmit(book.id, title)
     };
     return (
         <form onSubmit={handleSubmit} className="book-edit flex flex-col gap-2">
