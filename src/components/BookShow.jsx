@@ -1,8 +1,10 @@
 import React from 'react'
+import "../index.css";
 
-function BookShow() {
+function BookShow({ book }) {
+
   return (
-    <div>BookShow</div>
+    <div className='text-center bg-slate-300 h-[300px] rounded-xl border border-black' >{book.title}</div>
   )
 }
 
