@@ -7,9 +7,19 @@ import BookList from "./components/BookList";
 function App() {
 	const [books, setBooks] = useState([]);
 	/*
-  react won't update to the app component if they compare the original state 
-  and the update state have the same reference, so react won't re-render
-  */
+	react won't update to the app component if they compare the original state 
+	and the update state have the same reference, so react won't re-render
+	*/
+	const editBookById = (id, newTitle) => {
+		const updatedBooks = books.map((book) => {
+			if (book.id === id) {
+				return {... book, title : newTitle};
+			}
+			return book
+		})
+		setBooks(updatedBooks)
+	}
+	
 	const createBook = (title) => {
 		const updateBooks = [
 			...books,
@@ -33,7 +43,7 @@ function App() {
 		<div className="app text-2xl">
 			<BookCreate onCreate={createBook} />
 			<div className="px-6">
-				<BookList books={books} onDelete={deleteBookById} />
+				<BookList books={books} onDelete={deleteBookById} onEdit={editBookById} />
 			</div>
 		</div>
 	);
