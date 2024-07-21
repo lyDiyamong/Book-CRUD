@@ -17,7 +17,7 @@ function BookEdit({book, onSubmit}) {
        onSubmit(book.id, title)
     };
     return (
-        <form onSubmit={handleSubmit} className="book-edit flex flex-col gap-2">
+        <form onSubmit={handleSubmit} className="book-edit flex flex-col gap-2 font-normal text-xl">
             <label>Title:</label>
             <input value={title} onChange={handleChange} className="w-10/12 rounded-lg p-2" />
             <button className="save-button bg-blue-950 text-white rounded-md p-2 w-[80px]">

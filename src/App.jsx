@@ -44,6 +44,7 @@ function App() {
 		<div className="app text-2xl">
 			<BookCreate onCreate={createBook} />
 			<div className="px-6">
+				<h1>Reading List</h1>
 				<BookList books={books} onDelete={deleteBookById} onEdit={editBookById} />
 			</div>
 		</div>
